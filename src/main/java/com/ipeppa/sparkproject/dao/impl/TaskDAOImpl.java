@@ -46,7 +46,7 @@ public class TaskDAOImpl implements ITaskDAO {
                     String taskStatus = rs.getString(7);
                     String taskParam = rs.getString(8);
 
-                    task.setTaskid(taskId);
+                    task.setTaskId(taskId);
                     task.setTaskName(taskName);
                     task.setCreateTime(createTime);
                     task.setStartTime(startTime);

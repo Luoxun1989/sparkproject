@@ -16,7 +16,7 @@ import org.apache.spark.AccumulatorParam;
 
 /**
  * 〈一句话功能简述〉<br> 
- * 〈 自定义accumulate〉
+ * 〈自定义Accumulator〉
  *
  * @author admin
  * @create 2020/4/15

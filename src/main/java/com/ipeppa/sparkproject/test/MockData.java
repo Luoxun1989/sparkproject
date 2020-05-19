@@ -33,11 +33,13 @@ import java.util.*;
  */
 public class MockData {
 
+    public static void mockReadData(JavaSparkContext sc, SQLContext sqlContext) {
+
+    }
     public static void mock(JavaSparkContext sc, SQLContext sqlContext) {
         List<Row> rows = new ArrayList<Row>();
-
-        String[] searchKeywords = new String[] {"火锅", "蛋糕", "重庆辣子鸡", "重庆小面",
-                "呷哺呷哺", "新辣道鱼火锅", "国贸大厦", "太古商场", "日本料理", "温泉"};
+        String[] searchKeywords = new String[] {"再见次元星", "炎皇", "圆梦之巅", "平仙传",
+                "桃野女高", "雪蝶之恋", "娱乐之超神小白脸", "三界红包群", "龙珠之超神枯林", "遇难从骷髅岛开始"};
         String date = DateUtils.getTodayDate();
         String[] actions = new String[]{"search", "click", "order", "pay"};
         Random random = new Random();
@@ -74,6 +76,7 @@ public class MockData {
                         payProductIds = String.valueOf(random.nextInt(100));
                     }
 
+
                     Row row = RowFactory.create(date, userid, sessionid,
                             pageid, actionTime, searchKeyword,
                             clickCategoryId, clickProductId,
@@ -103,15 +106,15 @@ public class MockData {
         DataFrame df = sqlContext.createDataFrame(rowsRDD, schema);
 
         df.registerTempTable("user_visit_action");
-        for(Row _row : df.take(1)) {
+        for(Row _row : df.take(5)) {
             System.out.println(_row);
         }
+        rows.clear();
 
         /**
-         * ==================================================================
+         * ====================模拟用户数据==============================================
          */
 
-        rows.clear();
         String[] sexes = new String[]{"male", "female"};
         for(int i = 0; i < 100; i ++) {
             long userid = i;
@@ -139,7 +142,7 @@ public class MockData {
                 DataTypes.createStructField("sex", DataTypes.StringType, true)));
 
         DataFrame df2 = sqlContext.createDataFrame(rowsRDD, schema2);
-        for(Row _row : df2.take(1)) {
+        for(Row _row : df2.take(5)) {
             System.out.println(_row);
         }
 
