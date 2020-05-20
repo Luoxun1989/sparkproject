@@ -10,6 +10,7 @@
  */
 package com.ipeppa.sparkproject.dao.impl;
 
+import com.ipeppa.sparkproject.dao.ISessionAggrStatDAO;
 import com.ipeppa.sparkproject.dao.ITaskDAO;
 
 /**
@@ -25,4 +26,7 @@ public class DAOFactory {
         return new TaskDAOImpl();
     }
 
+    public static ISessionAggrStatDAO getSessionAggrStatDAO() {
+        return new SessionAggrStatDAOImpl();
+    }
 }
