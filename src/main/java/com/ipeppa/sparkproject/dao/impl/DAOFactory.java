@@ -11,6 +11,8 @@
 package com.ipeppa.sparkproject.dao.impl;
 
 import com.ipeppa.sparkproject.dao.ISessionAggrStatDAO;
+import com.ipeppa.sparkproject.dao.ISessionDetailDAO;
+import com.ipeppa.sparkproject.dao.ISessionRandomExtractDAO;
 import com.ipeppa.sparkproject.dao.ITaskDAO;
 
 /**
@@ -28,5 +30,12 @@ public class DAOFactory {
 
     public static ISessionAggrStatDAO getSessionAggrStatDAO() {
         return new SessionAggrStatDAOImpl();
+    }
+    public static ISessionRandomExtractDAO getSessionRandomExtractDAO(){
+        return new SessionRandomExtractImpl();
+    }
+
+    public static ISessionDetailDAO getSessionDetailDAO() {
+        return new SessionDetailDAOImpl();
     }
 }
