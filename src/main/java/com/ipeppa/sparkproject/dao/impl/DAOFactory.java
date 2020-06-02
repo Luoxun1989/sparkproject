@@ -10,10 +10,7 @@
  */
 package com.ipeppa.sparkproject.dao.impl;
 
-import com.ipeppa.sparkproject.dao.ISessionAggrStatDAO;
-import com.ipeppa.sparkproject.dao.ISessionDetailDAO;
-import com.ipeppa.sparkproject.dao.ISessionRandomExtractDAO;
-import com.ipeppa.sparkproject.dao.ITaskDAO;
+import com.ipeppa.sparkproject.dao.*;
 
 /**
  * 〈一句话功能简述〉<br> 
@@ -37,5 +34,11 @@ public class DAOFactory {
 
     public static ISessionDetailDAO getSessionDetailDAO() {
         return new SessionDetailDAOImpl();
+    }
+    public static IFakeVisitDataDAO getFakeVisitDataDAO(){
+        return new FakeVisitDataDAOImpl();
+    }
+    public static IFakeUserInfoDataDAO getFakeUserInfoDataDAO(){
+        return new FakeUserInfoDAOImpl();
     }
 }
